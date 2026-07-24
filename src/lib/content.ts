@@ -22,10 +22,10 @@ import type {
 } from "@/types";
 
 export const stats: Stat[] = [
-  { value: "48hr", label: "First draft", sub: "Guaranteed turnaround" },
+  { value: "48hr", label: "First draft turnaround", sub: "Guaranteed" },
   { value: "PKR 90k", label: "Starting price", sub: "Fixed quotes always" },
   { value: "90+", label: "Projects delivered", sub: "Across 15+ industries" },
-  { value: "100%", label: "Mobile-first", sub: "Every single build" },
+  { value: "100%", label: "Mobile-first", sub: "Every build" },
 ];
 
 export const services: ServiceItem[] = [

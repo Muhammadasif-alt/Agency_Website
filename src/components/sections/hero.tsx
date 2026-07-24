@@ -1,66 +1,89 @@
 import Link from "next/link";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { trustSignals } from "@/lib/content";
+import { HeroVideo } from "@/components/sections/hero-video";
+import { stats } from "@/lib/content";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="brand-glow pointer-events-none absolute inset-0 -z-10" />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:56px_56px] opacity-[0.15] [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(38rem_30rem_at_15%_-10%,color-mix(in_oklch,var(--brand)_12%,transparent),transparent_60%)]"
       />
 
-      <div className="container-page flex flex-col items-center gap-8 py-20 text-center sm:py-28">
-        <div className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-1.5 text-sm shadow-sm backdrop-blur">
-          <span className="flex -space-x-1">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="size-3.5 fill-primary text-primary" />
+      <div className="container-page grid items-center gap-12 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+        {/* Left — copy + stats */}
+        <div className="flex flex-col">
+          {/* Badge */}
+          <div className="flex">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand/10 px-4 py-1.5 text-sm font-medium text-brand">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand/60" />
+                <span className="relative inline-flex size-2 rounded-full bg-brand" />
+              </span>
+              Working with clients across the UK, US &amp; beyond
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="mt-6 font-heading text-5xl font-semibold leading-[1.02] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+            The web design agency{" "}
+            <span className="italic text-brand">
+              that actually gets you clients.
+            </span>
+          </h1>
+
+          {/* Subtext */}
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground text-pretty">
+            Idea Digital is a web design and digital agency building fast,
+            conversion-focused websites for businesses across the UK, US and
+            beyond. No middlemen. No templates. Just results.
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
+              <Link href="/contact?type=audit">
+                Get your free audit
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full px-7 text-base"
+            >
+              <Link href="#portfolio">
+                See our work
+                <ArrowDown className="size-4" />
+              </Link>
+            </Button>
+          </div>
+
+          {/* Stats cards */}
+          <div className="mt-10 grid grid-cols-2 gap-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border bg-card p-5 shadow-sm"
+              >
+                <div className="font-heading text-3xl font-semibold tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="mt-1 text-sm font-medium">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">{stat.sub}</div>
+              </div>
             ))}
-          </span>
-          <span className="text-muted-foreground">
-            Rated 5/5 by 90+ happy clients
-          </span>
+          </div>
         </div>
 
-        <h1 className="max-w-4xl font-heading text-4xl font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">
-          The web design agency{" "}
-          <span className="text-gradient">that actually gets you clients.</span>
-        </h1>
-
-        <p className="max-w-2xl text-lg text-muted-foreground text-pretty">
-          We build fast, conversion-focused websites for businesses across
-          Pakistan, the UK, the US and beyond — designed to turn visitors into
-          paying customers, not just to look pretty.
-        </p>
-
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Button asChild size="lg" className="h-12 px-7 text-base">
-            <Link href="/contact?type=audit">
-              Get your free audit
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-12 px-7 text-base"
-          >
-            <Link href="/portfolio">See our work</Link>
-          </Button>
+        {/* Right — video testimonial */}
+        <div className="lg:pl-6">
+          <HeroVideo />
         </div>
-
-        <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-          {trustSignals.map((item) => (
-            <li key={item.label} className="flex items-center gap-2">
-              <item.icon className="size-4 text-primary" />
-              {item.label}
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

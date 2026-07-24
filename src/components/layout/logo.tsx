@@ -9,7 +9,7 @@ export function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        "group flex items-center gap-2 font-heading text-lg font-bold tracking-tight",
+        "group flex items-center gap-2 text-lg font-bold tracking-tight",
         className,
       )}
       aria-label={`${siteConfig.name} — home`}

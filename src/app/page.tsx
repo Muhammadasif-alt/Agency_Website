@@ -1,5 +1,4 @@
 import { Hero } from "@/components/sections/hero";
-import { Stats } from "@/components/sections/stats";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { ProcessSteps } from "@/components/sections/process-steps";
@@ -12,7 +11,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Stats />
       <ServicesGrid />
       <WhyChooseUs />
       <ProcessSteps />
