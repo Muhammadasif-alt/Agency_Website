@@ -31,7 +31,7 @@ export function MainServices() {
                 {/* Image */}
                 <div
                   className={cn(
-                    "relative min-h-[300px] lg:min-h-[380px]",
+                    "relative min-h-[360px] lg:min-h-[480px]",
                     !imageLeft && "lg:order-2",
                   )}
                 >

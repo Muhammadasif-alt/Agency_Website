@@ -39,10 +39,22 @@ export const mainNav: { title: string; href: string; items?: NavItem[] }[] = [
     href: "/services",
     items: [
       {
-        title: "Web Design & Development",
+        title: "Custom Web Development",
         href: "/services/web-design-development",
         description:
-          "Custom-built, fast-loading websites designed to convert visitors into paying clients.",
+          "MERN, Next.js and Laravel — fast, custom-built websites and web apps.",
+      },
+      {
+        title: "WordPress",
+        href: "/services/wordpress",
+        description:
+          "Fast, secure custom WordPress and WooCommerce builds you can manage yourself.",
+      },
+      {
+        title: "Shopify",
+        href: "/services/shopify",
+        description:
+          "Custom Shopify storefronts designed to convert browsers into buyers.",
       },
       {
         title: "SEO & Local SEO",
@@ -76,7 +88,9 @@ export const mainNav: { title: string; href: string; items?: NavItem[] }[] = [
 
 export const footerNav = {
   services: [
-    { title: "Web Design & Development", href: "/services/web-design-development" },
+    { title: "Custom Web Development", href: "/services/web-design-development" },
+    { title: "WordPress", href: "/services/wordpress" },
+    { title: "Shopify", href: "/services/shopify" },
     { title: "SEO & Local SEO", href: "/services/seo" },
     { title: "Website Maintenance", href: "/services/website-maintenance" },
   ],

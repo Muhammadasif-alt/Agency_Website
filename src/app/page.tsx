@@ -8,6 +8,7 @@ import { Industries } from "@/components/sections/industries";
 import { PortfolioGrid } from "@/components/sections/portfolio-grid";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
+import { ContactForm } from "@/components/sections/contact-form";
 import { Cta } from "@/components/sections/cta";
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
       <PortfolioGrid />
       <Testimonials />
       <Faq />
+      <ContactForm />
       <Cta />
     </>
   );

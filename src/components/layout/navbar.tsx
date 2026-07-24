@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { mainNav } from "@/config/site";
@@ -19,6 +20,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileNav } from "@/components/layout/mobile-nav";
 
 export function Navbar() {
+  const router = useRouter();
   const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
@@ -49,7 +51,10 @@ export function Navbar() {
             {mainNav.map((item) =>
               item.items ? (
                 <NavigationMenuItem key={item.title}>
-                  <NavigationMenuTrigger className="bg-transparent text-[15px]">
+                  <NavigationMenuTrigger
+                    className="bg-transparent text-[15px]"
+                    onClick={() => router.push(item.href)}
+                  >
                     {item.title}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
