@@ -174,6 +174,13 @@
   .animate-marquee {
     animation: marquee 32s linear infinite;
   }
+  /* Portfolio slider — second row scrolls the other way */
+  .animate-marquee-slow {
+    animation: marquee 55s linear infinite;
+  }
+  .animate-marquee-reverse {
+    animation: marquee 60s linear infinite reverse;
+  }
 }
 
 @keyframes marquee {
@@ -183,7 +190,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-marquee-slow,
+  .animate-marquee-reverse {
     animation: none;
   }
 }

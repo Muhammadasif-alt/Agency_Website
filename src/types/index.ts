@@ -45,7 +45,9 @@ export type PortfolioItem = {
   slug: string;
   title: string;
   category: string;
-  excerpt: string;
+  country?: string;
+  label?: string;
+  excerpt?: string;
   image?: string;
   result?: string;
 };
