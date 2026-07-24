@@ -1,59 +1,80 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/sections/section-heading";
 import { services } from "@/lib/content";
 
 export function ServicesGrid() {
   return (
-    <section id="services" className="container-page py-20 sm:py-28">
-      <SectionHeading
-        eyebrow="What we do"
-        title="Everything you need to win online"
-        description="From a brand-new website to ranking on Google and keeping it all running — one team, no hand-offs."
-      />
+    <section id="services" className="container-page py-24 sm:py-32">
+      {/* Header row */}
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
+            What we do
+          </p>
+          <h2 className="mt-4 font-heading text-4xl font-semibold leading-[1.12] tracking-tight text-balance sm:text-5xl">
+            Web design and digital services built for businesses that want to
+            grow
+          </h2>
+        </div>
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="h-12 shrink-0 rounded-full px-6 text-base"
+        >
+          <Link href="/services">
+            All services
+            <ArrowRight className="size-4" />
+          </Link>
+        </Button>
+      </div>
 
+      {/* Cards */}
       <div className="mt-14 grid gap-6 md:grid-cols-3">
         {services.map((service) => (
-          <Card
+          <div
             key={service.slug}
-            className="group relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg"
+            className="group flex flex-col overflow-hidden rounded-3xl border bg-card p-2.5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
           >
-            <CardContent className="flex h-full flex-col p-7">
-              <div className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <service.icon className="size-6" />
+            {/* Image */}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+
+            {/* Body */}
+            <div className="flex flex-1 flex-col p-4 sm:p-5">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="font-heading text-xl font-semibold leading-snug">
+                  {service.title}
+                </h3>
+                <Badge className="mt-0.5 shrink-0 rounded-full border-transparent bg-brand/10 text-brand hover:bg-brand/15">
+                  {service.badge}
+                </Badge>
               </div>
 
-              <h3 className="mt-5 font-heading text-xl font-semibold">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {service.excerpt}
               </p>
 
-              <ul className="mt-5 space-y-2 text-sm">
-                {service.points.map((point) => (
-                  <li key={point} className="flex items-center gap-2">
-                    <Check className="size-4 shrink-0 text-primary" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-
-              <Button
-                asChild
-                variant="link"
-                className="mt-auto w-fit px-0 pt-6"
+              <Link
+                href={`/services/${service.slug}`}
+                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-all hover:gap-2.5"
               >
-                <Link href={`/services/${service.slug}`}>
-                  Learn more
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
+                Learn more
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          </div>
         ))}
       </div>
     </section>

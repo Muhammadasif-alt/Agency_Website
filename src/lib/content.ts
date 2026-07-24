@@ -31,27 +31,36 @@ export const stats: Stat[] = [
 export const services: ServiceItem[] = [
   {
     slug: "web-design-development",
-    title: "Web Design & Development",
+    title: "Web Design and Development",
     excerpt:
-      "Custom-built, fast-loading websites designed to convert visitors into paying clients — not just look pretty.",
+      "Custom-built, fast-loading websites designed to convert visitors into paying clients. Every site is unique to your brand, built from scratch with SEO baked in from day one, not bolted on afterwards.",
     icon: Code2,
     points: ["Next.js & modern stack", "Conversion-first layouts", "Blazing-fast performance"],
+    image:
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80",
+    badge: "Most popular",
   },
   {
     slug: "seo",
-    title: "SEO & Local SEO",
+    title: "Local SEO",
     excerpt:
-      "Get found by customers who are actively searching for what you offer, in your city and beyond.",
+      "Get found by customers who are actively searching for what you offer. We optimise your Google Business Profile, build local citations and improve your rankings so the right people find you first.",
     icon: Search,
     points: ["Technical + on-page SEO", "Google Business Profile", "Content strategy"],
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    badge: "High ROI",
   },
   {
     slug: "website-maintenance",
     title: "Website Maintenance",
     excerpt:
-      "Your website is a live business asset. Monthly updates, security monitoring, speed checks and content changes.",
+      "Your website is a live business asset. Monthly updates, security monitoring, speed checks and content changes. We keep everything running smoothly so you never have to worry about it.",
     icon: Wrench,
     points: ["Security monitoring", "Speed & uptime checks", "Content updates"],
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    badge: "Ongoing",
   },
 ];
 

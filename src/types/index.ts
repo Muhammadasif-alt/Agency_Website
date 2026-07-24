@@ -12,6 +12,8 @@ export type ServiceItem = {
   excerpt: string;
   icon: LucideIcon;
   points: string[];
+  image: string;
+  badge: string;
 };
 
 export type BenefitItem = {
