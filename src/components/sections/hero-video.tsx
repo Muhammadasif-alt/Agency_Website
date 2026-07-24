@@ -57,7 +57,7 @@ export function HeroVideo() {
     setIndex((i) => (i + dir + clips.length) % clips.length);
 
   return (
-    <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border bg-card shadow-xl sm:max-w-md">
+    <div className="relative w-full min-h-[520px] max-w-[440px] overflow-hidden rounded-3xl bg-card shadow-xl">
       {/* Fallback poster — shows until a real video is added */}
       <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-brand/25 via-brand-2/15 to-secondary">
         <span className="font-heading text-7xl font-semibold text-brand/40">

@@ -242,3 +242,23 @@ export const trustSignals = [
   { icon: Headset, label: "Direct support" },
   { icon: BadgeCheck, label: "Fixed pricing" },
 ];
+
+/** Scrolling keyword ticker under the hero */
+export const marqueeKeywords = [
+  "Digital Agency",
+  "SEO Agency",
+  "SEO Services",
+  "Digital Marketing",
+  "Web Design Company",
+  "SEO Company",
+  "Conversion Design",
+  "Brand Strategy",
+];
+
+/** Services checklist shown on the About promo card */
+export const aboutServices = [
+  "Web Design",
+  "E-commerce Web",
+  "Local SEO Services",
+  "Website Maintenance",
+];

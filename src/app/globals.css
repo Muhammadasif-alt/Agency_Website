@@ -142,7 +142,7 @@
 @layer components {
   /* Section wrapper — consistent horizontal padding + max width */
   .container-page {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8;
   }
   /* Gradient text for headline accents */
   .text-gradient {
@@ -168,5 +168,22 @@
         color-mix(in oklch, var(--brand-2) 18%, transparent),
         transparent 55%
       );
+  }
+
+  /* Infinite keyword ticker */
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
   }
 }

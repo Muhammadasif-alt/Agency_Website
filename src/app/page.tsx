@@ -1,4 +1,6 @@
 import { Hero } from "@/components/sections/hero";
+import { Marquee } from "@/components/sections/marquee";
+import { About } from "@/components/sections/about";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { ProcessSteps } from "@/components/sections/process-steps";
@@ -11,6 +13,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Marquee />
+      <About />
       <ServicesGrid />
       <WhyChooseUs />
       <ProcessSteps />

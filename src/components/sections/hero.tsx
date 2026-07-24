@@ -13,7 +13,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(38rem_30rem_at_15%_-10%,color-mix(in_oklch,var(--brand)_12%,transparent),transparent_60%)]"
       />
 
-      <div className="container-page grid items-center gap-12 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+      <div className="container-page grid items-stretch gap-12 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
         {/* Left — copy + stats */}
         <div className="flex flex-col">
           {/* Badge */}
@@ -28,7 +28,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="mt-6 font-heading text-5xl font-semibold leading-[1.02] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-heading text-6xl font-semibold leading-[1.06] tracking-tight text-balance sm:text-7xl lg:text-[5.25rem]">
             The web design agency{" "}
             <span className="italic text-brand">
               that actually gets you clients.
@@ -36,7 +36,7 @@ export function Hero() {
           </h1>
 
           {/* Subtext */}
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground text-pretty">
+          <p className="mt-7 max-w-xl text-lg text-muted-foreground text-pretty sm:text-xl">
             Idea Digital is a web design and digital agency building fast,
             conversion-focused websites for businesses across the UK, US and
             beyond. No middlemen. No templates. Just results.
@@ -80,8 +80,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right — video testimonial */}
-        <div className="lg:pl-6">
+        {/* Right — video testimonial (stretches to match the text height) */}
+        <div className="flex justify-center lg:justify-end">
           <HeroVideo />
         </div>
       </div>
