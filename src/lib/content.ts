@@ -4,16 +4,17 @@ import {
   Code2,
   Globe,
   Headset,
-  LineChart,
   MessageSquare,
   Search,
   ShieldCheck,
+  Target,
   Wrench,
 } from "lucide-react";
 
 import type {
   BenefitItem,
   FaqItem,
+  IndustryItem,
   PortfolioItem,
   ProcessStep,
   ServiceItem,
@@ -68,65 +69,65 @@ export const benefits: BenefitItem[] = [
   {
     title: "48-hour first draft",
     description:
-      "See a real design of your homepage within two days — no month-long waits before you see progress.",
+      "You see a real design within 48 hours of briefing. No waiting weeks to see something. We move fast without cutting corners and most clients are live within 2 to 3 weeks.",
     icon: Clock,
   },
   {
     title: "Fixed prices, always",
     description:
-      "You get a clear, fixed quote up front. No surprise invoices, no hourly billing games.",
+      "Every project starts with a clear, upfront quote. No hourly billing, no scope creep surprises. The number we give you is the number you pay. Full stop.",
     icon: BadgeCheck,
   },
   {
     title: "SEO built in from day one",
     description:
-      "Every build ships with clean markup, fast load times and search-ready structure.",
+      "Every site we build is structured for Google from the ground up. Proper heading hierarchy, schema markup, fast load times, metadata and mobile-first development. Not an afterthought.",
     icon: Search,
   },
   {
     title: "Global reach, personal service",
     description:
-      "We work with clients across Pakistan, the UK and the US — but you always talk to a real person.",
+      "We're based in Pakistan but work with clients across the UK, US and Europe. Fully remote, no geographical limits and you always deal directly with the team doing the work.",
     icon: Globe,
   },
   {
     title: "Conversion focused",
     description:
-      "Every section is designed to turn a visitor into an enquiry, a call, or a sale.",
-    icon: LineChart,
+      "A beautiful website that does not generate enquiries is just an expensive business card. Every decision we make is guided by what turns visitors into leads.",
+    icon: Target,
   },
   {
     title: "Direct communication",
     description:
-      "No account-manager telephone game. You talk directly to the people building your site.",
+      "No account managers, no ticket systems. You work directly with the people building your site. Fast replies, honest updates and a team that treats your project like it matters.",
     icon: MessageSquare,
   },
 ];
 
 export const processSteps: ProcessStep[] = [
   {
-    step: "01",
-    title: "Free audit & discovery",
+    step: "1",
+    title: "Free audit and discovery",
     description:
-      "We review your current site (or idea), your goals and your competitors — then tell you exactly what will move the needle.",
+      "We review your current online presence, research your competitors and show you exactly what is holding your business back from ranking and converting.",
   },
   {
-    step: "02",
-    title: "Strategy & fixed quote",
+    step: "2",
+    title: "Strategy and fixed quote",
     description:
-      "You get a clear plan and a fixed price. You know exactly what you're getting before we start.",
+      "A clear proposal covering scope, timeline and a fixed price. You know exactly what you are getting before anything starts.",
   },
   {
-    step: "03",
-    title: "Design & build",
+    step: "3",
+    title: "Design and build",
     description:
-      "First draft in 48 hours. We refine together until it's right, then build it fast and clean.",
+      "Your first design draft arrives within 48 hours. We refine until it is perfect, then build every page with full SEO, forms, analytics and speed optimisation included.",
   },
   {
-    step: "04",
-    title: "Launch & ongoing support",
+    step: "4",
+    title: "Launch and ongoing support",
     description:
-      "We launch, monitor performance and stay on hand for updates, changes and growth.",
+      "We handle domain setup, SSL, Search Console submission and stay on hand for 30 days post-launch. Ongoing SEO and maintenance packages available if you want us to keep growing it.",
   },
 ];
 
@@ -270,4 +271,40 @@ export const aboutServices = [
   "E-commerce Web",
   "Local SEO Services",
   "Website Maintenance",
+];
+
+/** Industries grid — uses the project screenshots in /public */
+export const industries: IndustryItem[] = [
+  {
+    slug: "healthcare",
+    badge: "Healthcare",
+    title: "Web Design and SEO for Healthcare",
+    excerpt:
+      "Attract new patients, showcase your treatments and enable online booking. Built to rank on Google for the searches your patients are actually making.",
+    image: "/aloe_project.jpeg",
+  },
+  {
+    slug: "physiotherapy",
+    badge: "Physiotherapy",
+    title: "Web Design and SEO for Physiotherapists",
+    excerpt:
+      "Fill your appointment book with a clinic website that ranks locally for physio searches and turns visitors into booked consultations.",
+    image: "/coreo_project.jpeg",
+  },
+  {
+    slug: "law-firms",
+    badge: "Law Firm",
+    title: "Web Design and SEO for Law Firms",
+    excerpt:
+      "Win higher-value clients with a professional, trust-building website that ranks for the legal services you actually offer.",
+    image: "/honest_cash_project.jpeg",
+  },
+  {
+    slug: "cleaning",
+    badge: "Cleaning",
+    title: "Web Design and SEO for Cleaning Companies",
+    excerpt:
+      "Book more residential and commercial jobs with a site built to convert local searches into enquiries and quote requests.",
+    image: "/crosal_project.jpeg",
+  },
 ];

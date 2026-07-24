@@ -49,3 +49,11 @@ export type PortfolioItem = {
   image?: string;
   result?: string;
 };
+
+export type IndustryItem = {
+  slug: string;
+  badge: string;
+  title: string;
+  excerpt: string;
+  image: string;
+};
