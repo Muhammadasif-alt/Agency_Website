@@ -1,0 +1,158 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Admin panel login (sirf aap — public signup nahi hai)
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Blog + Portfolio dono ke liye shared taxonomy
+model Category {
+  id        String      @id @default(cuid())
+  name      String      @unique
+  slug      String      @unique
+  kind      CategoryKind @default(PORTFOLIO)
+  portfolio Portfolio[]
+  posts     BlogPost[]
+  createdAt DateTime    @default(now())
+
+  @@index([kind])
+}
+
+enum CategoryKind {
+  PORTFOLIO
+  BLOG
+  INDUSTRY
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String
+  content     String?
+  icon        String?
+  priceFrom   Int?
+  features    String[]
+  published   Boolean  @default(true)
+  order       Int      @default(0)
+  metaTitle   String?
+  metaDesc    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([published, order])
+}
+
+model Portfolio {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  client      String?
+  excerpt     String
+  content     String?
+  coverImage  String?
+  gallery     String[]
+  liveUrl     String?
+  result      String?
+  techStack   String[]
+  featured    Boolean   @default(false)
+  published   Boolean   @default(true)
+  order       Int       @default(0)
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  metaTitle   String?
+  metaDesc    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([published, featured, order])
+  @@index([categoryId])
+}
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  excerpt     String
+  content     String
+  coverImage  String?
+  author      String    @default("Idea Digital")
+  readTime    Int?
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  tags        String[]
+  metaTitle   String?
+  metaDesc    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([published, publishedAt])
+  @@index([categoryId])
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String?
+  company   String?
+  location  String?
+  content   String
+  rating    Int      @default(5)
+  avatar    String?
+  featured  Boolean  @default(false)
+  published Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@index([published, order])
+}
+
+model Enquiry {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  budget    String?
+  service   String?
+  message   String
+  source    String?
+  status    EnquiryStatus @default(NEW)
+  notes     String?
+  createdAt DateTime      @default(now())
+
+  @@index([status, createdAt])
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  WON
+  CLOSED
+}
+
+model Faq {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  page      String   @default("home")
+  order     Int      @default(0)
+  published Boolean  @default(true)
+
+  @@index([page, published, order])
+}
