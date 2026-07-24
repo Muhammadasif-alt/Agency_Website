@@ -36,10 +36,16 @@ export const services: ServiceItem[] = [
     excerpt:
       "Custom-built, fast-loading websites designed to convert visitors into paying clients. Every site is unique to your brand, built from scratch with SEO baked in from day one, not bolted on afterwards.",
     icon: Code2,
-    points: ["Next.js & modern stack", "Conversion-first layouts", "Blazing-fast performance"],
+    points: [
+      "48hr first draft",
+      "Mobile-first build",
+      "SEO from day one",
+      "Fixed price always",
+    ],
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80",
     badge: "Most popular",
+    price: "From £799",
   },
   {
     slug: "seo",
@@ -47,10 +53,16 @@ export const services: ServiceItem[] = [
     excerpt:
       "Get found by customers who are actively searching for what you offer. We optimise your Google Business Profile, build local citations and improve your rankings so the right people find you first.",
     icon: Search,
-    points: ["Technical + on-page SEO", "Google Business Profile", "Content strategy"],
+    points: [
+      "Google Business Profile",
+      "On-page optimisation",
+      "Citation building",
+      "Monthly reporting",
+    ],
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     badge: "High ROI",
+    price: "From £449/mo",
   },
   {
     slug: "website-maintenance",
@@ -58,10 +70,16 @@ export const services: ServiceItem[] = [
     excerpt:
       "Your website is a live business asset. Monthly updates, security monitoring, speed checks and content changes. We keep everything running smoothly so you never have to worry about it.",
     icon: Wrench,
-    points: ["Security monitoring", "Speed & uptime checks", "Content updates"],
+    points: [
+      "Monthly updates",
+      "Security patches",
+      "Speed monitoring",
+      "Content changes",
+    ],
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
     badge: "Ongoing",
+    price: "From £149/mo",
   },
 ];
 
@@ -243,27 +261,59 @@ export const faqs: FaqItem[] = [
 
 export const testimonials: TestimonialItem[] = [
   {
+    name: "Shane Davies",
+    company: "South View Glamping",
+    location: "United Kingdom",
+    content:
+      "Idea Digital transformed our online presence completely. Our bookings have increased significantly since the new site went live. Professional, fast and genuinely invested in our success.",
+    rating: 5,
+  },
+  {
     name: "Ricardo B.",
-    role: "Business Owner",
+    company: "RB Interiors",
     location: "United States",
     content:
       "This is the second project with them. Awesome at what they do, great communication throughout, gave me feedback on my project, made it better, and went above and beyond.",
     rating: 5,
   },
   {
-    name: "Ayesha K.",
-    role: "Clinic Director",
+    name: "Ayesha Khan",
+    company: "Noor Dental Clinic",
     location: "Lahore, PK",
     content:
-      "Our new booking site went live in under two weeks and appointment requests jumped straight away. Genuinely felt like they cared about the results, not just the design.",
+      "Our new booking site went live in under two weeks and appointment requests jumped straight away. It genuinely felt like they cared about the results, not just the design.",
     rating: 5,
   },
   {
-    name: "Daniel M.",
-    role: "Marketing Lead",
+    name: "Daniel Moore",
+    company: "Peak Fitness",
     location: "United Kingdom",
     content:
       "Fixed price, fast turnaround, and the site is quick. Exactly what was promised. We've already recommended them to two other companies.",
+    rating: 5,
+  },
+  {
+    name: "Sofia Alvarez",
+    company: "Bella Salon",
+    location: "Spain",
+    content:
+      "Beautiful, modern and so easy to update ourselves. Our clients constantly compliment the new website and we're getting far more online bookings.",
+    rating: 5,
+  },
+  {
+    name: "Omar Sheikh",
+    company: "Sheikh & Co Law",
+    location: "United States",
+    content:
+      "They understood exactly what a law firm needs — trust, clarity and strong calls to action. Enquiries from the website have more than doubled.",
+    rating: 5,
+  },
+  {
+    name: "Emma Wright",
+    company: "Wright Physiotherapy",
+    location: "Australia",
+    content:
+      "From first call to launch was seamless. The site ranks locally now and new patients mention finding us on Google every week.",
     rating: 5,
   },
 ];

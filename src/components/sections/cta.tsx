@@ -1,35 +1,50 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
-export function Cta() {
+const guarantees = ["No contracts", "Fixed price guaranteed", "Reply within 1 hour"];
+
+type CtaProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function Cta({
+  eyebrow = "Free · No obligation · 24hr turnaround",
+  title = "Ready to get a website that actually grows your business?",
+  description = "Get a free, honest audit of your current website. We'll show you exactly what is holding you back and what it would take to fix it. No sales pitch, just straight answers.",
+}: CtaProps = {}) {
   return (
-    <section className="container-page py-20 sm:py-28">
-      <div className="relative overflow-hidden rounded-3xl border bg-primary px-6 py-16 text-center text-primary-foreground sm:px-16">
+    <section className="container-page py-16 sm:py-20">
+      <div className="relative overflow-hidden rounded-[2rem] bg-neutral-950 px-6 py-16 text-center sm:px-16 sm:py-20">
+        {/* brand glow */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(30rem_30rem_at_20%_0%,white,transparent_60%),radial-gradient(24rem_24rem_at_100%_100%,white,transparent_55%)]"
+          className="pointer-events-none absolute inset-0 opacity-70 [background:radial-gradient(42rem_22rem_at_50%_-15%,color-mix(in_oklch,var(--brand)_35%,transparent),transparent_60%)]"
         />
-        <div className="relative">
-          <h2 className="mx-auto max-w-2xl font-heading text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-            Ready for a website that actually gets you clients?
+
+        <div className="relative mx-auto max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-lime-400">
+            {eyebrow}
+          </p>
+          <h2 className="mt-5 font-heading text-4xl font-semibold text-balance text-white sm:text-5xl">
+            {title}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80 text-pretty">
-            Get a free, no-obligation audit of your current site — or a fixed
-            quote for a brand-new one. First draft in 48 hours.
+          <p className="mx-auto mt-5 max-w-xl text-pretty text-white/60">
+            {description}
           </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
               asChild
               size="lg"
-              variant="secondary"
-              className="h-12 px-7 text-base"
+              className="h-12 rounded-full bg-brand px-7 text-base text-white hover:bg-brand/90"
             >
               <Link href="/contact?type=audit">
-                Get your free audit
+                Get my free website audit
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
@@ -37,18 +52,37 @@ export function Cta() {
               asChild
               size="lg"
               variant="outline"
-              className="h-12 border-primary-foreground/30 bg-transparent px-7 text-base text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              className="h-12 rounded-full border-white/20 bg-white/5 px-7 text-base text-white hover:bg-white/10 hover:text-white"
             >
-              <a
-                href={siteConfig.contact.whatsapp}
-                target="_blank"
-                rel="noopener"
-              >
+              <Link href="/contact">
+                Or just say hello
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full border-white/20 bg-white/5 px-7 text-base text-white hover:bg-white/10 hover:text-white"
+            >
+              <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener">
                 <MessageCircle className="size-4" />
-                Chat on WhatsApp
+                WhatsApp us
               </a>
             </Button>
           </div>
+
+          <p className="mt-8 text-sm text-white/50">
+            Trusted by 90+ businesses across the UK, US and globally
+          </p>
+          <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70">
+            {guarantees.map((g) => (
+              <li key={g} className="flex items-center gap-1.5">
+                <Check className="size-4 text-lime-400" strokeWidth={3} />
+                {g}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

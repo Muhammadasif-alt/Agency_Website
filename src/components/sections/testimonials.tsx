@@ -1,8 +1,11 @@
-import { Star } from "lucide-react";
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import * as React from "react";
+import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { SectionHeading } from "@/components/sections/section-heading";
+import { Button } from "@/components/ui/button";
 import { testimonials } from "@/lib/content";
 
 function initials(name: string) {
@@ -14,45 +17,80 @@ function initials(name: string) {
 }
 
 export function Testimonials() {
+  const [index, setIndex] = React.useState(0);
+  const count = testimonials.length;
+  const t = testimonials[index];
+  const go = (dir: 1 | -1) => setIndex((i) => (i + dir + count) % count);
+
   return (
-    <section className="container-page py-20 sm:py-28">
-      <SectionHeading
-        eyebrow="Client love"
-        title="Don't just take our word for it"
-        description="Real results and real relationships — here's what clients say after working with us."
-      />
+    <section className="container-page py-24 sm:py-32">
+      <div className="text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
+          What clients say
+        </p>
+        <h2 className="mt-4 font-heading text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+          Don&apos;t just take our word for it
+        </h2>
+      </div>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-        {testimonials.map((t) => (
-          <Card key={t.name} className="flex flex-col">
-            <CardContent className="flex h-full flex-col p-7">
-              <div className="flex gap-0.5">
-                {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} className="size-4 fill-primary text-primary" />
-                ))}
+      <div className="mx-auto mt-12 max-w-3xl">
+        <div className="rounded-3xl border bg-card p-8 shadow-[0_10px_45px_-20px_rgba(0,0,0,0.25)] sm:p-12">
+          <Quote className="size-8 fill-brand text-brand" />
+
+          <blockquote className="mt-6 text-lg italic leading-relaxed text-foreground/80 text-pretty sm:text-xl">
+            {t.content}
+          </blockquote>
+
+          <div className="mt-8 flex items-center gap-4">
+            <Avatar className="size-12">
+              <AvatarFallback className="bg-brand/10 font-semibold text-brand">
+                {initials(t.name)}
+              </AvatarFallback>
+            </Avatar>
+            <div>
+              <div className="font-semibold">{t.name}</div>
+              <div className="text-sm text-muted-foreground">
+                {[t.company, t.location].filter(Boolean).join(", ")}
               </div>
+            </div>
+          </div>
+        </div>
 
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-pretty">
-                “{t.content}”
-              </blockquote>
+        {/* Controls */}
+        <div className="mt-8 flex items-center justify-between gap-4">
+          <Button
+            variant="outline"
+            className="rounded-full"
+            onClick={() => go(-1)}
+          >
+            <ArrowLeft className="size-4" /> Prev
+          </Button>
 
-              <div className="mt-6 flex items-center gap-3 border-t pt-5">
-                <Avatar>
-                  <AvatarFallback className="bg-primary/10 text-primary">
-                    {initials(t.name)}
-                  </AvatarFallback>
-                </Avatar>
-                <div>
-                  <div className="text-sm font-semibold">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">
-                    {t.role}
-                    {t.location ? ` · ${t.location}` : ""}
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+          <div className="flex items-center gap-2">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setIndex(i)}
+                aria-label={`Testimonial ${i + 1}`}
+                className={cn(
+                  "h-2 rounded-full transition-all",
+                  i === index
+                    ? "w-6 bg-brand"
+                    : "w-2 bg-border hover:bg-muted-foreground/40",
+                )}
+              />
+            ))}
+          </div>
+
+          <Button
+            variant="outline"
+            className="rounded-full"
+            onClick={() => go(1)}
+          >
+            Next <ArrowRight className="size-4" />
+          </Button>
+        </div>
       </div>
     </section>
   );

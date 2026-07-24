@@ -14,6 +14,7 @@ export type ServiceItem = {
   points: string[];
   image: string;
   badge: string;
+  price: string;
 };
 
 export type BenefitItem = {
@@ -35,7 +36,8 @@ export type FaqItem = {
 
 export type TestimonialItem = {
   name: string;
-  role: string;
+  role?: string;
+  company?: string;
   location?: string;
   content: string;
   rating: number;
