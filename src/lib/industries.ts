@@ -19,7 +19,8 @@ export type IndustryDetail = {
   features: IndustryFeature[];
   advantages: IndustryFeature[];
   ctaTitle: string;
-  image: string;
+  /** Optional real project screenshot for the index card; gradient tile if omitted. */
+  image?: string;
 };
 
 export const industryDetails: IndustryDetail[] = [
@@ -87,7 +88,6 @@ export const industryDetails: IndustryDetail[] = [
       { icon: "mail", title: "More quotes, less chasing", description: "Clear 'free consultation' CTAs that bring warm, ready-to-book enquiries straight to you." },
     ],
     ctaTitle: "Ready to book more outdoor-living jobs?",
-    image: "/bee_project.jpeg",
   },
   {
     slug: "roofing-pools",
@@ -120,7 +120,6 @@ export const industryDetails: IndustryDetail[] = [
       { icon: "award", title: "Stand out as legit", description: "License numbers and clear credentials that separate you from storm-chasing fly-by-nights." },
     ],
     ctaTitle: "Ready to win more roofing & pool jobs?",
-    image: "/crosal_project.jpeg",
   },
   {
     slug: "job-portals",
@@ -153,7 +152,6 @@ export const industryDetails: IndustryDetail[] = [
       { icon: "database", title: "Own your data", description: "A custom platform you fully own — no per-listing fees to a third-party board." },
     ],
     ctaTitle: "Ready to build your job portal?",
-    image: "/honest_cash_project.jpeg",
   },
   {
     slug: "ecommerce",
@@ -186,7 +184,6 @@ export const industryDetails: IndustryDetail[] = [
       { icon: "lineChart", title: "Revenue you can measure", description: "Analytics and CRO baked in so every month you learn what to improve next." },
     ],
     ctaTitle: "Ready to grow your online store?",
-    image: "/coreo_project.jpeg",
   },
   {
     slug: "saas",
@@ -219,7 +216,7 @@ export const industryDetails: IndustryDetail[] = [
       { icon: "database", title: "You own it", description: "A custom platform you fully own — no per-seat fees to someone else's SaaS." },
     ],
     ctaTitle: "Ready to build your platform?",
-    image: "/honest_cash_project.jpeg",
+    image: "/bee_project.jpeg",
   },
   {
     slug: "real-estate",
@@ -252,6 +249,71 @@ export const industryDetails: IndustryDetail[] = [
       { icon: "shield", title: "Close with confidence", description: "Trustworthy design and real reviews that make people comfortable transacting with you." },
     ],
     ctaTitle: "Ready to turn property searches into offers?",
+    image: "/honest_cash_project.jpeg",
+  },
+  {
+    slug: "interior-design",
+    name: "Interior Design",
+    eyebrow: "Web design for interior designers & architects",
+    tagline: "that turn your portfolio into projects.",
+    lead: "Portfolio-driven websites for interior designers, architects and fit-out firms — like the luxury Dehleez Studio site we built — that showcase your work beautifully and turn browsers into booked consultations.",
+    whyTitle: "In design, your website has to look as good as your work",
+    whyBody: [
+      "Interior design is a visual, high-trust purchase. If your website doesn't showcase your projects in stunning detail and feel as refined as your work, high-end clients quietly move on.",
+      "We build portfolio-first sites — big project galleries, clear service breakdowns and a clean 'book a consultation' flow — so your best rooms win your next brief.",
+    ],
+    stats: [
+      { value: "Portfolio-first", label: "big, beautiful project galleries that sell your work" },
+      { value: "Consultation", label: "'Schedule a Consultation' and brief-submission flows built in" },
+      { value: "Luxury feel", label: "a refined design that matches high-end clients' expectations" },
+    ],
+    features: [
+      { icon: "image", title: "Project galleries", description: "Full-screen, high-resolution galleries of your residential and commercial projects that sell the work at a glance." },
+      { icon: "fileText", title: "Service pages", description: "Clear pages for interior design, architecture, 3D modeling and fit-out so clients understand your full offer." },
+      { icon: "calendar", title: "Consultation booking", description: "'Schedule a Consultation' and 'Share Your Project Brief' flows wired straight to your inbox." },
+      { icon: "layers", title: "3D renders & before/after", description: "Show 3D renders and before-and-after transformations that prove your design vision." },
+      { icon: "award", title: "Trust & credentials", description: "Client retention, five-star reviews and past-project counts front and center to win high-value briefs." },
+      { icon: "smartphone", title: "Mobile-first design", description: "A refined, fast experience on the phones most clients browse inspiration from." },
+    ],
+    advantages: [
+      { icon: "trending", title: "Win high-end briefs", description: "A luxury, portfolio-led site attracts the premium residential and commercial projects you want." },
+      { icon: "image", title: "Showcase your work", description: "Gallery-first design that lets your finished spaces speak for themselves around the clock." },
+      { icon: "calendarCheck", title: "Book more consultations", description: "Clear consultation and brief CTAs that turn admirers into real enquiries." },
+      { icon: "shield", title: "Build instant trust", description: "A refined site plus real reviews and credentials that reassure discerning clients." },
+    ],
+    ctaTitle: "Ready to turn your portfolio into projects?",
+  },
+  {
+    slug: "events-entertainment",
+    name: "Events & Entertainment",
+    eyebrow: "Web design for DJs, events & entertainment",
+    tagline: "that keep your calendar booked.",
+    lead: "Booking-focused websites for DJs, event companies and entertainers — like the CrossFade Entertainment site we built — that show off the vibe and make it effortless for clients to book their date.",
+    whyTitle: "People book the entertainer who looks like the best night",
+    whyBody: [
+      "Weddings, quinceañeras and corporate events are booked on feel. If your site doesn't capture the energy of your events and make checking your date easy, couples and planners book someone else.",
+      "We build vibrant, booking-first sites — packages, event galleries, video and a simple 'book now' date-check flow — so more visitors lock in their event with you.",
+    ],
+    stats: [
+      { value: "Book now", label: "date-check and booking flow that converts party planners" },
+      { value: "Packages", label: "clear DJ, photo-booth and lighting packages that upsell" },
+      { value: "Every event", label: "weddings, quinceañeras, corporate, school and private parties" },
+    ],
+    features: [
+      { icon: "fileText", title: "Event & package pages", description: "Clear pages for DJ, emcee, photo booth, 360 booth and lighting packages that make booking easy." },
+      { icon: "calendar", title: "Booking & date check", description: "'Book Now' and availability forms wired straight to you so clients lock in their date fast." },
+      { icon: "image", title: "Photo & video galleries", description: "Energetic event galleries and video that capture the vibe of your parties and weddings." },
+      { icon: "users", title: "Event-type targeting", description: "Dedicated content for weddings, quinceañeras, corporate events, fundraisers and school events." },
+      { icon: "mapPin", title: "Local & venue SEO", description: "Rank for 'wedding DJ near me' and the venues and cities you actually serve." },
+      { icon: "star", title: "Reviews & trust", description: "Client reviews and past-event highlights that reassure planners you'll deliver the night." },
+    ],
+    advantages: [
+      { icon: "calendarCheck", title: "Stay booked", description: "A booking-first site with easy date checks that keeps your event calendar full." },
+      { icon: "image", title: "Sell the experience", description: "Photo and video-led design that makes clients feel the night before they book." },
+      { icon: "trending", title: "Upsell packages", description: "Clear DJ, booth and lighting packages that grow the value of every booking." },
+      { icon: "mapPin", title: "Rank locally", description: "Local and venue SEO that puts you in front of couples and planners searching now." },
+    ],
+    ctaTitle: "Ready to keep your events calendar booked?",
     image: "/crosal_project.jpeg",
   },
   {
@@ -285,7 +347,6 @@ export const industryDetails: IndustryDetail[] = [
       { icon: "trending", title: "Grow with confidence", description: "A system that scales from a single location to many, without a costly rebuild." },
     ],
     ctaTitle: "Ready to build your management system?",
-    image: "/aloe_project.jpeg",
   },
 ];
 

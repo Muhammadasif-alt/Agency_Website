@@ -81,6 +81,8 @@ export const mainNav: { title: string; href: string; items?: NavItem[] }[] = [
       { title: "Landscaping", href: "/industries/landscaping" },
       { title: "Roofing & Pools", href: "/industries/roofing-pools" },
       { title: "Job Portals", href: "/industries/job-portals" },
+      { title: "Interior Design", href: "/industries/interior-design" },
+      { title: "Events & Entertainment", href: "/industries/events-entertainment" },
       { title: "Management Systems", href: "/industries/management-systems" },
     ],
   },

@@ -51,6 +51,8 @@ export type PortfolioItem = {
   label?: string;
   excerpt?: string;
   image?: string;
+  /** Live site URL — makes the card a clickable link to the real project. */
+  url?: string;
   result?: string;
 };
 
@@ -59,5 +61,5 @@ export type IndustryItem = {
   badge: string;
   title: string;
   excerpt: string;
-  image: string;
+  image?: string;
 };

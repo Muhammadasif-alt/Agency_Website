@@ -40,13 +40,21 @@ export function Industries() {
             className="group flex flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
           >
             <div className="relative aspect-[16/10] overflow-hidden">
-              <Image
-                src={industry.image}
-                alt={industry.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              {industry.image ? (
+                <Image
+                  src={industry.image}
+                  alt={industry.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(120%_120%_at_20%_0%,color-mix(in_oklch,var(--brand)_18%,transparent),transparent_60%)] bg-card p-6 text-center">
+                  <span className="font-heading text-3xl font-bold leading-tight text-foreground/90">
+                    {industry.title}
+                  </span>
+                </div>
+              )}
               <Badge className="absolute left-4 top-4 rounded-full border-transparent bg-brand px-3 py-1 text-white shadow">
                 {industry.badge}
               </Badge>
