@@ -10,7 +10,8 @@ export function Faq() {
   const [open, setOpen] = React.useState<number | null>(0);
 
   return (
-    <section id="faq" className="container-page py-24 sm:py-32">
+    <section id="faq" className="bg-white dark:bg-card">
+      <div className="container-page py-24 sm:py-32">
       <div className="mx-auto max-w-4xl">
         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
           Common questions
@@ -55,6 +56,7 @@ export function Faq() {
             );
           })}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -8,7 +8,8 @@ import { industries } from "@/lib/content";
 
 export function Industries() {
   return (
-    <section id="industries" className="container-page py-24 sm:py-32">
+    <section id="industries" className="bg-white dark:bg-card">
+      <div className="container-page py-24 sm:py-32">
       {/* Header row */}
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
@@ -77,6 +78,7 @@ export function Industries() {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
