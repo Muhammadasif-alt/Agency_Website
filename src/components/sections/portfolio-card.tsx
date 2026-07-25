@@ -80,7 +80,7 @@ export function PortfolioCard({
               sizes="(max-width: 640px) 90vw, 400px"
               className="object-cover object-center"
             />
-          ) : item.url ? (
+          ) : item.url && !item.noShot ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={screenshotUrl(item.url)}

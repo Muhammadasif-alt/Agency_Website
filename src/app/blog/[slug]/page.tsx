@@ -5,6 +5,7 @@ import { ArrowLeft, Check } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { getBlogPost, blogSlugs, formatDate, sortedPosts } from "@/lib/blog";
+import { BlogCover } from "@/components/sections/blog-cover";
 import { Cta } from "@/components/sections/cta";
 
 export function generateStaticParams() {
@@ -86,6 +87,8 @@ export default async function BlogPostPage({
             By {post.author} · {formatDate(post.date)} · {post.readMinutes} min
             read
           </p>
+
+          <BlogCover post={post} className="mt-8 h-64 rounded-3xl sm:h-80" />
 
           <p className="mt-8 text-xl leading-relaxed text-foreground/90 text-pretty">
             {post.intro}

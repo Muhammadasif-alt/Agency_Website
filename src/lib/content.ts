@@ -240,6 +240,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Job Portal · 8,000+ listings",
     country: "US",
     url: "https://jobsinusa.us",
+    noShot: true,
   },
   {
     slug: "honest-cash",

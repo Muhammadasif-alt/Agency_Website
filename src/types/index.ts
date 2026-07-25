@@ -53,6 +53,8 @@ export type PortfolioItem = {
   image?: string;
   /** Live site URL — makes the card a clickable link to the real project. */
   url?: string;
+  /** Skip the auto homepage screenshot (e.g. Cloudflare-gated sites) — show a branded tile instead. */
+  noShot?: boolean;
   result?: string;
 };
 

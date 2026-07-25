@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { sortedPosts, formatDate } from "@/lib/blog";
+import { BlogCover } from "@/components/sections/blog-cover";
 
 const PAGE_SIZE = 4;
 
@@ -30,22 +31,21 @@ export function BlogList() {
             href={`/blog/${post.slug}`}
             className="group flex flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
           >
-            <div className="relative flex h-40 items-end bg-[radial-gradient(120%_120%_at_15%_0%,color-mix(in_oklch,var(--brand)_22%,transparent),transparent_60%)] bg-muted p-6">
-              <span className="rounded-full bg-background/80 px-3 py-1 text-xs font-semibold text-brand shadow-sm">
-                {post.category}
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col p-6">
+            <BlogCover
+              post={post}
+              className="h-56 transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+            <div className="flex flex-1 flex-col p-7">
               <p className="text-xs text-muted-foreground">
                 {formatDate(post.date)} · {post.readMinutes} min read
               </p>
-              <h3 className="mt-2 font-heading text-xl font-semibold leading-snug transition-colors group-hover:text-brand">
+              <h3 className="mt-2 font-heading text-2xl font-semibold leading-snug transition-colors group-hover:text-brand">
                 {post.title}
               </h3>
-              <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 line-clamp-3 leading-relaxed text-muted-foreground">
                 {post.excerpt}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-all group-hover:gap-2.5">
+              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-all group-hover:gap-2.5">
                 Read more
                 <ArrowRight className="size-4" />
               </span>
