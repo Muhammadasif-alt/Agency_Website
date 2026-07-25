@@ -8,8 +8,8 @@ import { siteConfig } from "@/config/site";
 
 export function About() {
   return (
-    <section id="about" className="container-page py-24 sm:py-32">
-      <div className="grid items-center gap-14 lg:grid-cols-2">
+    <section id="about" className="bg-white dark:bg-card">
+      <div className="container-page grid items-center gap-14 py-24 sm:py-32 lg:grid-cols-2">
         {/* Left — copy */}
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
