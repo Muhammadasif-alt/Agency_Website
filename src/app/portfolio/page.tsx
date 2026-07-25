@@ -81,7 +81,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Featured — auto-scrolling rows */}
-      <section className="overflow-hidden py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="container-page">
           <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
             Featured work
@@ -89,9 +89,9 @@ export default function PortfolioPage() {
           <h2 className="mt-4 font-heading text-4xl font-semibold leading-[1.12] tracking-tight text-balance sm:text-5xl">
             Some of our best work
           </h2>
-        </div>
-        <div className="mt-12">
-          <PortfolioCarousel />
+          <div className="mt-12">
+            <PortfolioCarousel />
+          </div>
         </div>
       </section>
 
