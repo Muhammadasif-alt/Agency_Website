@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { PortfolioMarquee } from "@/components/sections/portfolio-marquee";
+import { PortfolioCarousel } from "@/components/sections/portfolio-carousel";
 import { PortfolioBrowser } from "@/components/sections/portfolio-browser";
 import { Cta } from "@/components/sections/cta";
 
@@ -91,7 +91,7 @@ export default function PortfolioPage() {
           </h2>
         </div>
         <div className="mt-12">
-          <PortfolioMarquee scroll="hover" />
+          <PortfolioCarousel />
         </div>
       </section>
 

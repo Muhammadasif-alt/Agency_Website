@@ -73,7 +73,7 @@ export function Cta({
           </div>
 
           <p className="mt-8 text-sm text-white/50">
-            Trusted by 90+ businesses across the UK, US and globally
+            Trusted by businesses across the US, Canada, UAE and beyond
           </p>
           <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70">
             {guarantees.map((g) => (
