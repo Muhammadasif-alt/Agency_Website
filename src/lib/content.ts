@@ -321,7 +321,7 @@ export const testimonials: TestimonialItem[] = [
     company: "South View Glamping",
     location: "United Kingdom",
     content:
-      "Idea Digital transformed our online presence completely. Our bookings have increased significantly since the new site went live. Professional, fast and genuinely invested in our success.",
+      "Development By Niaz transformed our online presence completely. Our bookings have increased significantly since the new site went live. Professional, fast and genuinely invested in our success.",
     rating: 5,
   },
   {

@@ -3,11 +3,11 @@
  * Sirf yahan edit karo — poori site update ho jayegi.
  */
 export const siteConfig = {
-  name: "Idea Digital",
-  legalName: "Idea Digital Services",
+  name: "Development By Niaz",
+  legalName: "Development By Niaz",
   tagline: "Web design that actually gets you clients",
   description:
-    "Idea Digital is a web design and digital agency building fast, conversion-focused websites for businesses across Pakistan, UK, US and beyond.",
+    "Development By Niaz is a web design and digital agency building fast, conversion-focused websites for businesses across the US, Canada, UAE, Pakistan and beyond.",
   url: "https://ideadigital.services",
   ogImage: "/images/og.jpg",
 

@@ -37,9 +37,9 @@ export function Hero() {
 
           {/* Subtext */}
           <p className="mt-7 max-w-xl text-lg text-muted-foreground text-pretty sm:text-xl">
-            Idea Digital is a web design and digital agency building fast,
-            conversion-focused websites for businesses across the UK, US and
-            beyond. No middlemen. No templates. Just results.
+            Development By Niaz is a web design and digital agency building
+            fast, conversion-focused websites for businesses across the US,
+            Canada, UAE and beyond. No middlemen. No templates. Just results.
           </p>
 
           {/* Buttons */}
