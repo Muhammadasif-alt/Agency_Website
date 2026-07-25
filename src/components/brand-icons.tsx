@@ -27,6 +27,21 @@ const paths: Record<string, string> = {
   vercel: "M24 22.525H0l12-21.05 12 21.05z",
 };
 
+// Official brand colours. Brands with a naturally black mark (Next.js, Vercel)
+// are left out so they inherit currentColor and stay visible in dark mode.
+const colors: Record<string, string> = {
+  react: "#61DAFB",
+  nodejs: "#5FA04E",
+  typescript: "#3178C6",
+  javascript: "#F7DF1E",
+  shopify: "#95BF47",
+  wordpress: "#21759B",
+  laravel: "#FF2D20",
+  mongodb: "#47A248",
+  tailwindcss: "#06B6D4",
+  aws: "#FF9900",
+};
+
 const aliases: Record<string, string> = {
   "next.js": "nextjs",
   "node.js": "nodejs",
@@ -49,10 +64,18 @@ export function BrandIcon({
   name: string;
   className?: string;
 }) {
-  const d = paths[keyFor(name)];
+  const key = keyFor(name);
+  const d = paths[key];
   if (!d) return null;
+  const color = colors[key];
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      style={color ? { color } : undefined}
+      aria-hidden
+    >
       <path d={d} />
     </svg>
   );

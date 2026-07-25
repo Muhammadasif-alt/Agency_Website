@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BrandIcon } from "@/components/brand-icons";
 import { Marquee } from "@/components/sections/marquee";
 import { Platforms } from "@/components/sections/platforms";
+import { Deployment } from "@/components/sections/deployment";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { PortfolioGrid } from "@/components/sections/portfolio-grid";
@@ -127,6 +128,7 @@ export function ServiceDetailView({ service }: { service: ServiceDetail }) {
       </section>
 
       <Platforms />
+      <Deployment />
       <ProcessSteps />
       <WhyChooseUs />
       <PortfolioGrid />
