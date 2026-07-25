@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { BrandIcon } from "@/components/brand-icons";
 import { Marquee } from "@/components/sections/marquee";
+import { Platforms } from "@/components/sections/platforms";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { PortfolioGrid } from "@/components/sections/portfolio-grid";
@@ -80,12 +81,16 @@ export function ServiceDetailView({ service }: { service: ServiceDetail }) {
                     </p>
                     <div className="mt-2.5 flex flex-wrap gap-2">
                       {group.items.map((item) => (
-                        <Badge
+                        <span
                           key={item}
-                          className="rounded-full border-transparent bg-brand/10 px-3 py-1 text-brand hover:bg-brand/15"
+                          className="inline-flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 text-sm font-medium"
                         >
+                          <BrandIcon
+                            name={item}
+                            className="size-4 text-foreground/80"
+                          />
                           {item}
-                        </Badge>
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -121,6 +126,7 @@ export function ServiceDetailView({ service }: { service: ServiceDetail }) {
         </div>
       </section>
 
+      <Platforms />
       <ProcessSteps />
       <WhyChooseUs />
       <PortfolioGrid />

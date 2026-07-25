@@ -39,7 +39,7 @@ export function Navbar() {
           : "bg-background/0",
       )}
     >
-      <div className="container-page grid h-18 grid-cols-[1fr_auto_1fr] items-center gap-4">
+      <div className="container-page grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4">
         {/* Left — logo */}
         <div className="flex justify-start">
           <Logo className="text-xl" />
@@ -93,7 +93,10 @@ export function Navbar() {
         {/* Right — actions */}
         <div className="flex items-center justify-end gap-2">
           <ThemeToggle />
-          <Button asChild className="hidden rounded-full sm:inline-flex">
+          <Button
+            asChild
+            className="hidden h-11 rounded-full px-7 text-[15px] sm:inline-flex"
+          >
             <Link href="/contact?type=audit">Free Audit</Link>
           </Button>
           <MobileNav />
