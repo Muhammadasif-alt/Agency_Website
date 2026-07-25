@@ -350,33 +350,49 @@ export const industries: IndustryItem[] = [
   {
     slug: "healthcare",
     badge: "Healthcare",
-    title: "Web Design and SEO for Healthcare",
+    title: "Web Design for Healthcare",
     excerpt:
-      "Attract new patients, showcase your treatments and enable online booking. Built to rank on Google for the searches your patients are actually making.",
+      "Attract and retain patients with a fast, trustworthy clinic website built to rank on Google and turn visitors into booked appointments.",
     image: "/aloe_project.jpeg",
   },
   {
-    slug: "physiotherapy",
-    badge: "Physiotherapy",
-    title: "Web Design and SEO for Physiotherapists",
+    slug: "real-estate",
+    badge: "Real Estate",
+    title: "Web Design for Real Estate",
     excerpt:
-      "Fill your appointment book with a clinic website that ranks locally for physio searches and turns visitors into booked consultations.",
+      "Listings, search and lead capture that turn property browsers into valuations and viewings for agents and developers.",
+    image: "/crosal_project.jpeg",
+  },
+  {
+    slug: "ecommerce",
+    badge: "E-commerce",
+    title: "Shopify & Online Stores",
+    excerpt:
+      "Conversion-first Shopify and headless stores with fast product pages and a smooth checkout that turns browsers into buyers.",
     image: "/coreo_project.jpeg",
   },
   {
-    slug: "law-firms",
-    badge: "Law Firm",
-    title: "Web Design and SEO for Law Firms",
+    slug: "saas",
+    badge: "SaaS & AI",
+    title: "SaaS & AI Products",
     excerpt:
-      "Win higher-value clients with a professional, trust-building website that ranks for the legal services you actually offer.",
+      "Full-stack SaaS platforms and AI tools with auth, billing and dashboards — built on a modern stack to launch fast and scale.",
     image: "/honest_cash_project.jpeg",
   },
   {
-    slug: "cleaning",
-    badge: "Cleaning",
-    title: "Web Design and SEO for Cleaning Companies",
+    slug: "landscaping",
+    badge: "Landscaping",
+    title: "Web Design for Landscapers",
     excerpt:
-      "Book more residential and commercial jobs with a site built to convert local searches into enquiries and quote requests.",
+      "Show off your work and fill your calendar with booked quotes from local homeowners searching for landscapers.",
+    image: "/bee_project.jpeg",
+  },
+  {
+    slug: "roofing-pools",
+    badge: "Roofing & Pools",
+    title: "Roofing & Pool Contractors",
+    excerpt:
+      "Capture urgent, high-value leads with a fast, credibility-first website built for roofing and pool contractors.",
     image: "/crosal_project.jpeg",
   },
 ];
