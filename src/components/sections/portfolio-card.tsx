@@ -11,10 +11,15 @@ function prettyHost(url?: string, fallback = ""): string {
     .replace(/\/$/, "");
 }
 
+/** Live full-page homepage screenshot of a URL, via thum.io. */
+function screenshotUrl(url: string): string {
+  return `https://image.thum.io/get/width/1000/fullpage/${url}`;
+}
+
 /**
  * Portfolio card styled as a browser window — traffic-light dots + an address
- * bar showing the live project URL, then the real screenshot (or a branded
- * tile), with the project title + category below the frame.
+ * bar showing the live project URL, then the real homepage rendered inside the
+ * frame. The frame stays fixed while the full-page screenshot scrolls on hover.
  */
 export function PortfolioCard({ item }: { item: PortfolioItem }) {
   const host = prettyHost(item.url, item.title);
@@ -34,9 +39,18 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
           </span>
         </div>
 
-        {/* Screenshot / branded tile */}
-        <div className="relative aspect-[16/11] overflow-hidden bg-muted">
-          {item.image ? (
+        {/* Live homepage render — frame stays fixed, page scrolls on hover */}
+        <div className="relative h-[240px] overflow-hidden bg-muted">
+          {item.url ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={screenshotUrl(item.url)}
+              alt={`${item.title} homepage`}
+              loading="lazy"
+              decoding="async"
+              className="absolute left-0 top-0 w-full transition-transform duration-[5000ms] ease-linear group-hover:[transform:translateY(calc(240px_-_100%))]"
+            />
+          ) : item.image ? (
             <Image
               src={item.image}
               alt={item.title}
