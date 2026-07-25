@@ -68,6 +68,28 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: siteConfig.name,
+              url: siteConfig.url,
+              description: siteConfig.description,
+              email: siteConfig.contact.email,
+              areaServed: ["US", "CA", "AE", "PK"],
+              knowsAbout: [
+                "Web Design",
+                "Web Development",
+                "SEO",
+                "WordPress",
+                "Shopify",
+                "E-commerce",
+              ],
+            }),
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

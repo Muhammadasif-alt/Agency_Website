@@ -20,7 +20,9 @@ export function PortfolioCarousel({
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scrollByCards = (dir: number) => {
-    trackRef.current?.scrollBy({ left: dir * 384, behavior: "smooth" });
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({ left: dir * track.clientWidth * 0.9, behavior: "smooth" });
   };
 
   return (
@@ -32,9 +34,9 @@ export function PortfolioCarousel({
         {items.map((item) => (
           <div
             key={item.slug}
-            className="w-[300px] shrink-0 snap-start sm:w-[360px]"
+            className="w-[85%] shrink-0 snap-start sm:w-[calc((100%_-_1.5rem)/2)] lg:w-[calc((100%_-_3rem)/3)]"
           >
-            <PortfolioCard item={item} scroll="auto" />
+            <PortfolioCard item={item} scroll="auto" mediaHeight={360} />
           </div>
         ))}
       </div>

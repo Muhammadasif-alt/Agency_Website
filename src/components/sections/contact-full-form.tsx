@@ -69,7 +69,7 @@ export function ContactFullForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-3xl border bg-card p-6 shadow-sm sm:p-8"
+      className="rounded-3xl border bg-card p-6 shadow-xl ring-1 ring-black/[0.03] sm:p-8"
     >
       <h2 className="font-heading text-2xl font-semibold">Send us a message</h2>
       <p className="mt-1.5 text-sm text-muted-foreground">

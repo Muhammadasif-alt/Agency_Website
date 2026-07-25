@@ -157,14 +157,28 @@ export default function ContactPage() {
       </section>
 
       {/* Map */}
-      <section aria-label="Our location" className="relative h-[360px] w-full">
-        <iframe
-          title="Our location"
-          src="https://www.google.com/maps?q=Lahore,Pakistan&z=11&output=embed"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="h-full w-full border-0 grayscale-[0.2]"
-        />
+      <section aria-label="Our location" className="container-page pb-20 sm:pb-28">
+        <div className="relative overflow-hidden rounded-3xl border shadow-sm">
+          <iframe
+            title="Our location"
+            src="https://www.google.com/maps?q=Lahore,Pakistan&z=11&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[340px] w-full border-0 grayscale-[0.15] sm:h-[420px]"
+          />
+          <div className="pointer-events-none absolute left-4 top-4 max-w-xs rounded-2xl border bg-background/95 p-5 shadow-lg backdrop-blur sm:left-6 sm:top-6">
+            <p className="flex items-center gap-2 font-heading text-lg font-semibold">
+              <MapPin className="size-5 shrink-0 text-brand" />
+              {siteConfig.name}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {siteConfig.contact.address}
+            </p>
+            <p className="mt-1.5 text-sm font-medium text-brand">
+              Working with clients across the US, Canada, UAE &amp; beyond
+            </p>
+          </div>
+        </div>
       </section>
 
       <Cta

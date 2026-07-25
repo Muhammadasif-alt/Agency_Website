@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 
 import type { PortfolioItem } from "@/types";
@@ -29,9 +30,12 @@ type ScrollMode = "hover" | "auto" | "static";
 export function PortfolioCard({
   item,
   scroll = "hover",
+  mediaHeight = 240,
 }: {
   item: PortfolioItem;
   scroll?: ScrollMode;
+  /** Height of the browser-frame preview area, in px. */
+  mediaHeight?: number;
 }) {
   const host = prettyHost(item.url, item.title);
 
@@ -39,7 +43,7 @@ export function PortfolioCard({
     scroll === "auto"
       ? "animate-portfolio-vscroll"
       : scroll === "hover"
-        ? "transition-transform duration-[5000ms] ease-linear group-hover:[transform:translateY(calc(240px_-_100%))]"
+        ? "transition-transform duration-[5000ms] ease-linear group-hover:[transform:translateY(calc(var(--card-h)_-_100%))]"
         : "";
 
   const inner = (
@@ -59,7 +63,15 @@ export function PortfolioCard({
 
         {/* Live homepage render — frame stays fixed, page scrolls on hover.
             Prefer a hand-picked local screenshot; else auto-capture the URL. */}
-        <div className="relative h-[240px] overflow-hidden bg-muted">
+        <div
+          className="relative overflow-hidden bg-muted"
+          style={
+            {
+              height: `${mediaHeight}px`,
+              "--card-h": `${mediaHeight}px`,
+            } as CSSProperties
+          }
+        >
           {item.image ? (
             <Image
               src={item.image}
