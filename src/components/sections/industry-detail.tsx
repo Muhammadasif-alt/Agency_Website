@@ -2,10 +2,48 @@ import Link from "next/link";
 import {
   ArrowRight,
   Award,
+  BarChart3,
+  Bot,
+  Boxes,
+  Building2,
+  Calendar,
+  CalendarCheck,
+  CalendarClock,
   Check,
+  ClipboardList,
+  Cloud,
+  Cog,
+  CreditCard,
+  Database,
+  FileText,
+  Filter,
+  HeartPulse,
+  Home,
+  Image as ImageIcon,
+  KeyRound,
+  Layers,
+  LayoutDashboard,
+  LineChart,
+  Lock,
+  type LucideIcon,
+  Mail,
+  Map,
+  MapPin,
+  Percent,
+  Phone,
+  Plug,
+  Receipt,
+  Rocket,
   Search,
   ShieldCheck,
+  ShoppingCart,
+  Smartphone,
+  Sparkles,
+  Star,
+  Store,
   TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -20,7 +58,53 @@ import { ContactForm } from "@/components/sections/contact-form";
 import { Cta } from "@/components/sections/cta";
 import type { IndustryDetail } from "@/lib/industries";
 
-const advantageIcons = [Search, ShieldCheck, TrendingUp, Award];
+const iconMap: Record<string, LucideIcon> = {
+  award: Award,
+  barChart: BarChart3,
+  bot: Bot,
+  boxes: Boxes,
+  building: Building2,
+  calendar: Calendar,
+  calendarCheck: CalendarCheck,
+  calendarClock: CalendarClock,
+  cart: ShoppingCart,
+  clipboard: ClipboardList,
+  cloud: Cloud,
+  cog: Cog,
+  creditCard: CreditCard,
+  dashboard: LayoutDashboard,
+  database: Database,
+  fileText: FileText,
+  filter: Filter,
+  heartPulse: HeartPulse,
+  home: Home,
+  image: ImageIcon,
+  keyRound: KeyRound,
+  layers: Layers,
+  lineChart: LineChart,
+  lock: Lock,
+  mail: Mail,
+  map: Map,
+  mapPin: MapPin,
+  percent: Percent,
+  phone: Phone,
+  plug: Plug,
+  receipt: Receipt,
+  rocket: Rocket,
+  search: Search,
+  shield: ShieldCheck,
+  smartphone: Smartphone,
+  sparkles: Sparkles,
+  star: Star,
+  store: Store,
+  trending: TrendingUp,
+  users: Users,
+  zap: Zap,
+};
+
+function iconFor(key: string): LucideIcon {
+  return iconMap[key] ?? Check;
+}
 
 export function IndustryDetailView({ industry }: { industry: IndustryDetail }) {
   return (
@@ -110,22 +194,25 @@ export function IndustryDetailView({ industry }: { industry: IndustryDetail }) {
             </h2>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {industry.features.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-3xl border border-black/[0.04] bg-card p-7 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.22)]"
-              >
-                <span className="grid size-10 place-items-center rounded-xl bg-brand/10 text-brand">
-                  <Check className="size-5" strokeWidth={2.5} />
-                </span>
-                <h3 className="mt-4 font-heading text-lg font-semibold">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+            {industry.features.map((feature) => {
+              const Icon = iconFor(feature.icon);
+              return (
+                <div
+                  key={feature.title}
+                  className="rounded-3xl border border-black/[0.04] bg-card p-7 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.22)]"
+                >
+                  <span className="grid size-10 place-items-center rounded-xl bg-brand/10 text-brand">
+                    <Icon className="size-5" strokeWidth={2} />
+                  </span>
+                  <h3 className="mt-4 font-heading text-lg font-semibold">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -141,8 +228,8 @@ export function IndustryDetailView({ industry }: { industry: IndustryDetail }) {
           </h2>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {industry.advantages.map((advantage, i) => {
-            const Icon = advantageIcons[i % advantageIcons.length];
+          {industry.advantages.map((advantage) => {
+            const Icon = iconFor(advantage.icon);
             return (
               <div
                 key={advantage.title}
