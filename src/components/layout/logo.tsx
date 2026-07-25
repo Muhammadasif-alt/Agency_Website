@@ -1,26 +1,30 @@
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
+/**
+ * Brand logo. The source PNG is a white-text mark made for dark backgrounds,
+ * so on light backgrounds we render it solid dark (brightness-0) and keep the
+ * original colours in dark mode.
+ */
 export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={cn(
-        "group flex items-center gap-2 text-lg font-bold tracking-tight",
-        className,
-      )}
       aria-label={`${siteConfig.name} — home`}
+      className={cn("inline-flex items-center", className)}
     >
-      <span className="grid size-8 place-items-center rounded-lg bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
-        <Sparkles className="size-4" />
-      </span>
-      <span>
-        {siteConfig.name.split(" ")[0]}
-        <span className="text-primary"> {siteConfig.name.split(" ")[1]}</span>
-      </span>
+      <Image
+        src="/Development-By-Niaz-Logo-01-2-2048x525.png"
+        alt={siteConfig.name}
+        width={2048}
+        height={525}
+        priority
+        sizes="(max-width: 640px) 150px, 180px"
+        className="h-8 w-auto brightness-0 dark:brightness-100 sm:h-10"
+      />
     </Link>
   );
 }

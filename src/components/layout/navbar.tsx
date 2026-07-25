@@ -39,10 +39,10 @@ export function Navbar() {
           : "bg-background/0",
       )}
     >
-      <div className="container-page grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4">
+      <div className="container-page flex h-16 items-center justify-between gap-3 sm:h-20 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-4">
         {/* Left — logo */}
-        <div className="flex justify-start">
-          <Logo className="text-xl" />
+        <div className="flex min-w-0 justify-start">
+          <Logo />
         </div>
 
         {/* Center — navigation */}
