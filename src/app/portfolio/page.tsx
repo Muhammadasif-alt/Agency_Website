@@ -91,7 +91,7 @@ export default function PortfolioPage() {
           </h2>
         </div>
         <div className="mt-12">
-          <PortfolioMarquee />
+          <PortfolioMarquee scroll="hover" />
         </div>
       </section>
 

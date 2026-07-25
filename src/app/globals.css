@@ -189,5 +189,23 @@
   }
 }
 
+/* Browse-all cards: slowly auto-scroll the full homepage up and back down. */
+.animate-portfolio-vscroll {
+  animation: portfolio-vscroll 16s ease-in-out infinite;
+}
+@keyframes portfolio-vscroll {
+  0%,
+  6% {
+    transform: translateY(0);
+  }
+  50%,
+  56% {
+    transform: translateY(calc(240px - 100%));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* Portfolio / ticker marquees are core to the design, so they keep scrolling
    even when the OS requests reduced motion. Other transitions still respect it. */

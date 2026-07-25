@@ -16,13 +16,31 @@ function screenshotUrl(url: string): string {
   return `https://image.thum.io/get/width/1000/fullpage/${url}`;
 }
 
+type ScrollMode = "hover" | "auto" | "static";
+
 /**
  * Portfolio card styled as a browser window — traffic-light dots + an address
  * bar showing the live project URL, then the real homepage rendered inside the
- * frame. The frame stays fixed while the full-page screenshot scrolls on hover.
+ * fixed frame. `scroll` controls how the full-page screenshot moves:
+ *  - "hover": reveals the page on hover (top featured marquee)
+ *  - "auto": continuously scrolls the whole page up and down (browse-all grid)
+ *  - "static": stays at the top (home page slider)
  */
-export function PortfolioCard({ item }: { item: PortfolioItem }) {
+export function PortfolioCard({
+  item,
+  scroll = "hover",
+}: {
+  item: PortfolioItem;
+  scroll?: ScrollMode;
+}) {
   const host = prettyHost(item.url, item.title);
+
+  const shotMotion =
+    scroll === "auto"
+      ? "animate-portfolio-vscroll"
+      : scroll === "hover"
+        ? "transition-transform duration-[5000ms] ease-linear group-hover:[transform:translateY(calc(240px_-_100%))]"
+        : "";
 
   const inner = (
     <>
@@ -57,7 +75,7 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
               alt={`${item.title} homepage`}
               loading="lazy"
               decoding="async"
-              className="absolute left-0 top-0 w-full transition-transform duration-[5000ms] ease-linear group-hover:[transform:translateY(calc(240px_-_100%))]"
+              className={`absolute left-0 top-0 w-full ${shotMotion}`}
             />
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[radial-gradient(120%_120%_at_20%_0%,color-mix(in_oklch,var(--brand)_18%,transparent),transparent_60%)] bg-card p-6 text-center">

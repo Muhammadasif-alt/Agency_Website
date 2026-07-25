@@ -55,10 +55,10 @@ export function PortfolioBrowser() {
         })}
       </div>
 
-      {/* Grid */}
-      <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Grid — 4 per row, cards auto-scroll their full homepage */}
+      <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((item) => (
-          <PortfolioCard key={item.slug} item={item} />
+          <PortfolioCard key={item.slug} item={item} scroll="auto" />
         ))}
       </div>
     </div>

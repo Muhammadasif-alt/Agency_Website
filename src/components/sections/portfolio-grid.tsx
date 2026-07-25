@@ -30,9 +30,9 @@ export function PortfolioGrid() {
         </Button>
       </div>
 
-      {/* Two auto-scrolling rows */}
+      {/* Two auto-scrolling rows (static previews — no vertical scroll here) */}
       <div className="mt-14">
-        <PortfolioMarquee />
+        <PortfolioMarquee scroll="static" />
       </div>
     </section>
   );
