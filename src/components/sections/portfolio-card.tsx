@@ -39,9 +39,18 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
           </span>
         </div>
 
-        {/* Live homepage render — frame stays fixed, page scrolls on hover */}
+        {/* Live homepage render — frame stays fixed, page scrolls on hover.
+            Prefer a hand-picked local screenshot; else auto-capture the URL. */}
         <div className="relative h-[240px] overflow-hidden bg-muted">
-          {item.url ? (
+          {item.image ? (
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              sizes="(max-width: 640px) 90vw, 400px"
+              className="object-cover object-center"
+            />
+          ) : item.url ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={screenshotUrl(item.url)}
@@ -49,14 +58,6 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
               loading="lazy"
               decoding="async"
               className="absolute left-0 top-0 w-full transition-transform duration-[5000ms] ease-linear group-hover:[transform:translateY(calc(240px_-_100%))]"
-            />
-          ) : item.image ? (
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              sizes="(max-width: 640px) 90vw, 400px"
-              className="object-cover object-center"
             />
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[radial-gradient(120%_120%_at_20%_0%,color-mix(in_oklch,var(--brand)_18%,transparent),transparent_60%)] bg-card p-6 text-center">

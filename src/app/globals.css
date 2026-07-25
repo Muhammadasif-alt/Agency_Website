@@ -189,10 +189,5 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
-  .animate-marquee-slow,
-  .animate-marquee-reverse {
-    animation: none;
-  }
-}
+/* Portfolio / ticker marquees are core to the design, so they keep scrolling
+   even when the OS requests reduced motion. Other transitions still respect it. */
