@@ -22,7 +22,7 @@ export default function BlogPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
               Insights & guides
             </p>
-            <h1 className="mt-5 font-heading text-5xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl">
+            <h1 className="mt-5 font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-5xl md:text-6xl">
               Straight answers on{" "}
               <span className="italic text-brand">growing online.</span>
             </h1>

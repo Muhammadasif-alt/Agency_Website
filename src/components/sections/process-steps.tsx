@@ -7,8 +7,8 @@ import { processSteps } from "@/lib/content";
 
 export function ProcessSteps() {
   return (
-    <section className="container-page py-24 sm:py-32">
-      <div className="grid gap-14 lg:grid-cols-2">
+    <section className="bg-white dark:bg-card">
+      <div className="container-page grid gap-14 py-24 sm:py-32 lg:grid-cols-2">
         {/* Left — intro */}
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">

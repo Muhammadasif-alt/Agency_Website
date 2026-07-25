@@ -26,7 +26,7 @@ export default function IndustriesPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
               Industries we serve
             </p>
-            <h1 className="mt-5 font-heading text-5xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl">
+            <h1 className="mt-5 font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-5xl md:text-6xl">
               Built for <span className="italic text-brand">your industry.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground text-pretty">

@@ -56,7 +56,7 @@ export default function ContactPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
               Get in touch
             </p>
-            <h1 className="mt-5 font-heading text-5xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl">
+            <h1 className="mt-5 font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-5xl md:text-6xl">
               Let&apos;s talk about{" "}
               <span className="italic text-brand">your project.</span>
             </h1>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                           href={d.href}
                           target={d.href.startsWith("http") ? "_blank" : undefined}
                           rel="noopener"
-                          className="font-heading text-lg font-semibold hover:text-brand"
+                          className="font-heading text-lg font-semibold break-all hover:text-brand"
                         >
                           {d.value}
                         </a>
@@ -166,7 +166,7 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
             className="h-[340px] w-full border-0 grayscale-[0.15] sm:h-[420px]"
           />
-          <div className="pointer-events-none absolute left-4 top-4 max-w-xs rounded-2xl border bg-background/95 p-5 shadow-lg backdrop-blur sm:left-6 sm:top-6">
+          <div className="pointer-events-none absolute left-4 top-4 max-w-[calc(100%-2rem)] rounded-2xl border bg-background/95 p-5 shadow-lg backdrop-blur sm:left-6 sm:top-6 sm:max-w-xs">
             <p className="flex items-center gap-2 font-heading text-lg font-semibold">
               <MapPin className="size-5 shrink-0 text-brand" />
               {siteConfig.name}

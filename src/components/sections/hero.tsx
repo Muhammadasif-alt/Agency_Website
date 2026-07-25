@@ -18,17 +18,17 @@ export function Hero() {
         <div className="flex flex-col">
           {/* Badge */}
           <div className="flex">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand/10 px-4 py-1.5 text-sm font-medium text-brand">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand/10 px-4 py-1.5 text-xs font-medium text-brand sm:text-sm">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand/60" />
                 <span className="relative inline-flex size-2 rounded-full bg-brand" />
               </span>
-              Working with clients across the UK, US &amp; beyond
+              Working with clients across the US, Canada &amp; beyond
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="mt-6 font-heading text-6xl font-semibold leading-[1.06] tracking-tight text-balance sm:text-7xl lg:text-[5.25rem]">
+          <h1 className="mt-6 font-heading text-[2.75rem] font-semibold leading-[1.08] tracking-tight text-balance sm:text-6xl sm:leading-[1.06] md:text-7xl lg:text-[5.25rem]">
             The web design agency{" "}
             <span className="italic text-brand">
               that actually gets you clients.

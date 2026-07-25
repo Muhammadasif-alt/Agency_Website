@@ -421,13 +421,6 @@ export const industries: IndustryItem[] = [
     image: "/honest_cash_project.jpeg",
   },
   {
-    slug: "ecommerce",
-    badge: "E-commerce",
-    title: "Shopify & Online Stores",
-    excerpt:
-      "Conversion-first Shopify and WooCommerce stores we build and rank — one lifted product-page rankings 156% and added $124k in revenue.",
-  },
-  {
     slug: "saas",
     badge: "SaaS & AI",
     title: "SaaS & AI Products",
@@ -436,17 +429,11 @@ export const industries: IndustryItem[] = [
     image: "/bee_project.jpeg",
   },
   {
-    slug: "landscaping",
-    badge: "Landscaping",
-    title: "Web Design for Landscapers",
+    slug: "events-entertainment",
+    badge: "Events & Entertainment",
+    title: "Web Design for DJs & Events",
     excerpt:
-      "Show off your work and fill your calendar with booked quotes — the outdoor-living sites we build across the US & Canada.",
-  },
-  {
-    slug: "roofing-pools",
-    badge: "Roofing & Pools",
-    title: "Roofing & Pool Contractors",
-    excerpt:
-      "Capture urgent, high-value leads with a fast, credibility-first website — like Pro Roofing AZ and the Texas roofers we build for.",
+      "Booking-first websites for DJs, event companies and entertainers — like the CrossFade Entertainment site we built.",
+    image: "/crosal_project.jpeg",
   },
 ];
