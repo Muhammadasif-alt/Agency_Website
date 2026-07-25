@@ -58,22 +58,15 @@ export function Navbar() {
                     {item.title}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[420px] gap-1 p-2">
+                    <ul className="grid w-56 gap-0.5 p-2">
                       {item.items.map((sub) => (
                         <li key={sub.href}>
                           <NavigationMenuLink asChild>
                             <Link
                               href={sub.href}
-                              className="block rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                              className="block rounded-md px-3 py-2 text-sm font-medium no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                             >
-                              <div className="text-sm font-medium">
-                                {sub.title}
-                              </div>
-                              {sub.description ? (
-                                <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                                  {sub.description}
-                                </p>
-                              ) : null}
+                              {sub.title}
                             </Link>
                           </NavigationMenuLink>
                         </li>
