@@ -47,6 +47,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { FreeAuditButton } from "@/components/free-audit";
 import { Marquee } from "@/components/sections/marquee";
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { PortfolioGrid } from "@/components/sections/portfolio-grid";
@@ -128,12 +129,10 @@ export function IndustryDetailView({ industry }: { industry: IndustryDetail }) {
               {industry.lead}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
-                <Link href="/contact?type=audit">
-                  Get a free {industry.name.toLowerCase()} website audit
-                  <ArrowRight className="size-4" />
-                </Link>
-              </Button>
+              <FreeAuditButton size="lg" className="h-12 rounded-full px-7 text-base">
+                Get a free {industry.name.toLowerCase()} website audit
+                <ArrowRight className="size-4" />
+              </FreeAuditButton>
               <Button
                 asChild
                 size="lg"

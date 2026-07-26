@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { FreeAuditButton } from "@/components/free-audit";
 import { siteConfig } from "@/config/site";
 
 const guarantees = ["No contracts", "Fixed price guaranteed", "Reply within 1 hour"];
@@ -38,16 +39,13 @@ export function Cta({
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button
-              asChild
+            <FreeAuditButton
               size="lg"
               className="h-12 rounded-full bg-brand px-7 text-base text-white hover:bg-brand/90"
             >
-              <Link href="/contact?type=audit">
-                Get my free website audit
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
+              Get my free website audit
+              <ArrowRight className="size-4" />
+            </FreeAuditButton>
             <Button
               asChild
               size="lg"

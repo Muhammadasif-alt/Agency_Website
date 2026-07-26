@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 
 import { mainNav, siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
+import { FreeAuditButton } from "@/components/free-audit";
 import {
   Sheet,
   SheetContent,
@@ -66,9 +67,9 @@ export function MobileNav() {
         </nav>
 
         <div className="mt-auto flex flex-col gap-2 p-4">
-          <Button asChild onClick={() => setOpen(false)}>
-            <Link href="/contact?type=audit">Get your free audit</Link>
-          </Button>
+          <FreeAuditButton onClick={() => setOpen(false)}>
+            Get your free audit
+          </FreeAuditButton>
           <Button asChild variant="outline">
             <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener">
               WhatsApp us

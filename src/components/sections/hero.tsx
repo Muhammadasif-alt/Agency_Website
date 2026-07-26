@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { FreeAuditButton } from "@/components/free-audit";
 import { HeroVideo } from "@/components/sections/hero-video";
 import { stats } from "@/lib/content";
 
@@ -44,12 +45,10 @@ export function Hero() {
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
-              <Link href="/contact?type=audit">
-                Get your free audit
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
+            <FreeAuditButton size="lg" className="h-12 rounded-full px-7 text-base">
+              Get your free audit
+              <ArrowRight className="size-4" />
+            </FreeAuditButton>
             <Button
               asChild
               size="lg"

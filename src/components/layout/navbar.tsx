@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { mainNav } from "@/config/site";
-import { Button } from "@/components/ui/button";
+import { FreeAuditButton } from "@/components/free-audit";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -93,12 +93,9 @@ export function Navbar() {
         {/* Right — actions */}
         <div className="flex items-center justify-end gap-2">
           <ThemeToggle />
-          <Button
-            asChild
-            className="hidden h-11 rounded-full px-7 text-[15px] sm:inline-flex"
-          >
-            <Link href="/contact?type=audit">Free Audit</Link>
-          </Button>
+          <FreeAuditButton className="hidden h-11 rounded-full px-7 text-[15px] sm:inline-flex">
+            Free Audit
+          </FreeAuditButton>
           <MobileNav />
         </div>
       </div>

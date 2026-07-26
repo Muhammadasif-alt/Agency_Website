@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 import { footerNav, siteConfig } from "@/config/site";
 import { Logo } from "@/components/layout/logo";
+import { FreeAuditButton } from "@/components/free-audit";
 
 // Brand icons are inline SVG (lucide no longer ships social/brand marks).
 const socials = [
@@ -106,9 +107,18 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
               {footerNav.company.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="hover:text-brand">
-                    {link.title}
-                  </Link>
+                  {link.href.includes("type=audit") ? (
+                    <FreeAuditButton
+                      variant="link"
+                      className="h-auto p-0 text-sm font-normal text-muted-foreground hover:text-brand hover:no-underline"
+                    >
+                      {link.title}
+                    </FreeAuditButton>
+                  ) : (
+                    <Link href={link.href} className="hover:text-brand">
+                      {link.title}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

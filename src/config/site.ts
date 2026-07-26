@@ -88,7 +88,6 @@ export const mainNav: { title: string; href: string; items?: NavItem[] }[] = [
   },
   { title: "Portfolio", href: "/portfolio" },
   { title: "About", href: "/about" },
-  { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
 ];
 

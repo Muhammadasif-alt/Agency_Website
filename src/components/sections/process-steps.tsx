@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { FreeAuditButton } from "@/components/free-audit";
 import { processSteps } from "@/lib/content";
 
 export function ProcessSteps() {
@@ -22,16 +21,13 @@ export function ProcessSteps() {
             without the endless back and forth that drags most projects out for
             months. Most clients go live within 2 to 3 weeks of briefing.
           </p>
-          <Button
-            asChild
+          <FreeAuditButton
             size="lg"
             className="mt-8 h-12 rounded-full bg-brand px-7 text-base text-white hover:bg-brand/90"
           >
-            <Link href="/contact?type=audit">
-              Start with a free audit
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
+            Start with a free audit
+            <ArrowRight className="size-4" />
+          </FreeAuditButton>
         </div>
 
         {/* Right — steps */}

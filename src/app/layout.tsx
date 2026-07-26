@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FreeAuditDialog } from "@/components/free-audit";
 import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
@@ -100,6 +101,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppButton />
+          <FreeAuditDialog />
           <Toaster richColors position="top-center" />
         </ThemeProvider>
       </body>

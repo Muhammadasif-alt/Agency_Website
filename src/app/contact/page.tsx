@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, Clock, Mail, MapPin, MessageCircle } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
+import { FreeAuditButton } from "@/components/free-audit";
 import { ContactFullForm } from "@/components/sections/contact-full-form";
 import { Cta } from "@/components/sections/cta";
 
@@ -139,13 +139,13 @@ export default function ContactPage() {
 
             <div className="mt-8 border-t pt-6">
               <p className="text-sm text-muted-foreground">Not sure where to start?</p>
-              <Link
-                href="/contact?type=audit"
-                className="mt-1 inline-flex items-center gap-1.5 font-semibold text-brand hover:gap-2.5"
+              <FreeAuditButton
+                variant="link"
+                className="mt-1 inline-flex h-auto items-center gap-1.5 p-0 font-semibold text-brand hover:gap-2.5 hover:no-underline"
               >
                 Get a free website audit instead
                 <ArrowRight className="size-4" />
-              </Link>
+              </FreeAuditButton>
             </div>
           </div>
 
