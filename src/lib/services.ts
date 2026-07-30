@@ -66,7 +66,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     slug: "wordpress",
-    eyebrow: "WordPress",
+    eyebrow: "WordPress Development",
     title: "WordPress websites, done properly",
     hero: "Custom WordPress builds that are fast, secure and genuinely easy to manage — not slow, plugin-bloated templates you're scared to touch.",
     overview: [
@@ -91,7 +91,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     slug: "shopify",
-    eyebrow: "Shopify",
+    eyebrow: "Shopify Development",
     title: "Shopify stores built to sell",
     hero: "Custom Shopify storefronts designed to convert browsers into buyers — with the apps, integrations and speed your store needs to grow.",
     overview: [
@@ -133,6 +133,55 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     price: "From £449/mo",
     ctaTitle: "Want to rank higher on Google?",
+  },
+  {
+    slug: "social-media-ads",
+    eyebrow: "Social Media & Ads",
+    title: "Social media & paid ads that drive real growth",
+    hero: "Reach the right people, stay top of mind, and turn attention into real leads and sales — with managed social content and paid campaigns on Meta, Google and beyond.",
+    overview: [
+      "A great website deserves traffic. We run your social media and paid advertising end to end — from strategy and content to campaign setup, targeting and optimisation — so the right people find you and take action.",
+      "Every campaign is built around measurable outcomes: leads, calls and sales, not vanity metrics. We test, learn and refine each month, and report on what's actually working in plain English.",
+    ],
+    features: [
+      {
+        title: "Meta Ads (Facebook & Instagram)",
+        description:
+          "Campaigns that put your offer in front of the exact audience most likely to buy — with creative that stops the scroll.",
+      },
+      {
+        title: "Google Ads",
+        description:
+          "Search and display ads that capture demand the moment people look for what you offer.",
+      },
+      {
+        title: "Content & scheduling",
+        description:
+          "On-brand posts planned, designed and scheduled so your feed stays active and consistent.",
+      },
+      {
+        title: "Audience targeting",
+        description:
+          "Precise targeting and retargeting so your budget goes to people who convert, not everyone.",
+      },
+      {
+        title: "Landing pages",
+        description:
+          "Fast, focused landing pages built to turn ad clicks into enquiries and sales.",
+      },
+      {
+        title: "Clear reporting",
+        description:
+          "Monthly reports on spend, leads and cost-per-result — no fluff, just outcomes.",
+      },
+    ],
+    techStack: [
+      { category: "Ad platforms", items: ["Meta Ads", "Google Ads", "TikTok Ads"] },
+      { category: "Tracking", items: ["GA4", "Meta Pixel", "Search Console"] },
+      { category: "Content", items: ["Canva", "Scheduling", "Analytics"] },
+    ],
+    price: "From £399/mo",
+    ctaTitle: "Ready to get more leads from social?",
   },
   {
     slug: "website-maintenance",

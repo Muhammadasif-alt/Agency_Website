@@ -45,13 +45,13 @@ export const mainNav: { title: string; href: string; items?: NavItem[] }[] = [
           "MERN, Next.js and Laravel — fast, custom-built websites and web apps.",
       },
       {
-        title: "WordPress",
+        title: "WordPress Development",
         href: "/services/wordpress",
         description:
           "Fast, secure custom WordPress and WooCommerce builds you can manage yourself.",
       },
       {
-        title: "Shopify",
+        title: "Shopify Development",
         href: "/services/shopify",
         description:
           "Custom Shopify storefronts designed to convert browsers into buyers.",
@@ -61,6 +61,12 @@ export const mainNav: { title: string; href: string; items?: NavItem[] }[] = [
         href: "/services/seo",
         description:
           "Get found by customers who are actively searching for what you offer.",
+      },
+      {
+        title: "Social Media & Ads",
+        href: "/services/social-media-ads",
+        description:
+          "Managed social content and paid ads on Meta and Google that bring real leads.",
       },
       {
         title: "Website Maintenance",
@@ -78,9 +84,10 @@ export const mainNav: { title: string; href: string; items?: NavItem[] }[] = [
 export const footerNav = {
   services: [
     { title: "Custom Web Development", href: "/services/web-design-development" },
-    { title: "WordPress", href: "/services/wordpress" },
-    { title: "Shopify", href: "/services/shopify" },
+    { title: "WordPress Development", href: "/services/wordpress" },
+    { title: "Shopify Development", href: "/services/shopify" },
     { title: "SEO & Local SEO", href: "/services/seo" },
+    { title: "Social Media & Ads", href: "/services/social-media-ads" },
     { title: "Website Maintenance", href: "/services/website-maintenance" },
   ],
   company: [

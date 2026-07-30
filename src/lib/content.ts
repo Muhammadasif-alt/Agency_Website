@@ -32,7 +32,7 @@ export const stats: Stat[] = [
 export const services: ServiceItem[] = [
   {
     slug: "web-design-development",
-    title: "Web Design and Development",
+    title: "Custom Web Development",
     excerpt:
       "Custom-built, fast-loading websites designed to convert visitors into paying clients. Every site is unique to your brand, built from scratch with SEO baked in from day one, not bolted on afterwards.",
     icon: Code2,
@@ -48,8 +48,42 @@ export const services: ServiceItem[] = [
     price: "From £799",
   },
   {
+    slug: "wordpress",
+    title: "WordPress Development",
+    excerpt:
+      "Fast, secure custom WordPress and WooCommerce builds you can actually manage yourself — clean custom themes, only the plugins you need, no slow page-builder bloat.",
+    icon: Code2,
+    points: [
+      "Custom themes",
+      "WooCommerce stores",
+      "Speed optimised",
+      "Easy to edit",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
+    badge: "Popular",
+    price: "From £599",
+  },
+  {
+    slug: "shopify",
+    title: "Shopify Development",
+    excerpt:
+      "Custom Shopify storefronts designed to turn browsers into buyers — built for conversion and speed, with the apps and integrations your store needs to grow.",
+    icon: Globe,
+    points: [
+      "Custom themes",
+      "Liquid development",
+      "Conversion-first",
+      "App integrations",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+    badge: "E-commerce",
+    price: "From £799",
+  },
+  {
     slug: "seo",
-    title: "Local SEO",
+    title: "SEO & Local SEO",
     excerpt:
       "Get found by customers who are actively searching for what you offer. We optimise your Google Business Profile, build local citations and improve your rankings so the right people find you first.",
     icon: Search,
@@ -63,6 +97,23 @@ export const services: ServiceItem[] = [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     badge: "High ROI",
     price: "From £449/mo",
+  },
+  {
+    slug: "social-media-ads",
+    title: "Social Media & Ads",
+    excerpt:
+      "Done-for-you social media and paid ad campaigns that put your business in front of the right people — and bring back real leads and sales, not just likes.",
+    icon: MessageSquare,
+    points: [
+      "Meta & Google Ads",
+      "Content & scheduling",
+      "Audience targeting",
+      "Monthly reporting",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=800&q=80",
+    badge: "Growth",
+    price: "From £399/mo",
   },
   {
     slug: "website-maintenance",
