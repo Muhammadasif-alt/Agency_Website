@@ -3,7 +3,8 @@ import { siteConfig } from "@/config/site";
 
 export function WhyChooseUs() {
   return (
-    <section className="container-page py-24 sm:py-32">
+    <section className="dark bg-background text-foreground">
+      <div className="container-page py-24 sm:py-32">
       <div className="max-w-2xl">
         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
           Why choose us
@@ -17,7 +18,7 @@ export function WhyChooseUs() {
         {benefits.map((benefit) => (
           <div
             key={benefit.title}
-            className="rounded-3xl border border-black/[0.04] bg-card p-7 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.22)]"
+            className="rounded-3xl border border-white/10 bg-card p-7 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.22)]"
           >
             <span className="grid size-12 place-items-center rounded-xl bg-brand/10 text-brand">
               <benefit.icon className="size-6" strokeWidth={1.75} />
@@ -30,6 +31,7 @@ export function WhyChooseUs() {
             </p>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
