@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/config/site";
 import { serviceSlugs } from "@/lib/services";
-import { industrySlugs } from "@/lib/industries";
 import { blogSlugs } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = [
     "",
     "/services",
-    "/industries",
     "/portfolio",
     "/about",
     "/blog",
@@ -22,7 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const dynamicPaths = [
     ...serviceSlugs.map((s) => `/services/${s}`),
-    ...industrySlugs.map((s) => `/industries/${s}`),
     ...blogSlugs.map((s) => `/blog/${s}`),
   ];
 
