@@ -22,8 +22,7 @@ type Clip = {
 
 const clips: Clip[] = [
   { name: "Brian", role: "client", src: "/hero-video-mobile.mp4" },
-  { name: "Ayesha", role: "client", src: "/videos/testimonial-2.mp4" },
-  { name: "Daniel", role: "client", src: "/videos/testimonial-3.mp4" },
+  { name: "Zach", role: "client", src: "/zach.mp4" },
 ];
 
 export function HeroVideo() {
