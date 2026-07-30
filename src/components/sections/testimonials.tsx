@@ -23,8 +23,7 @@ export function Testimonials() {
   const go = (dir: 1 | -1) => setIndex((i) => (i + dir + count) % count);
 
   return (
-    <section className="dark bg-background text-foreground">
-      <div className="container-page py-24 sm:py-32">
+    <section className="container-page py-24 sm:py-32">
       <div className="text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
           What clients say
@@ -92,7 +91,6 @@ export function Testimonials() {
             Next <ArrowRight className="size-4" />
           </Button>
         </div>
-      </div>
       </div>
     </section>
   );
